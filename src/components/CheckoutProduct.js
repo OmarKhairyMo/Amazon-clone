@@ -2,8 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import Currency from "react-currency-formatter";
-import { useSelector, useDispatch } from "react-redux";
-import { addToBasket, removeFromBasket } from "../slices/basketSlice";
+import { useDispatch } from "react-redux";
+import {
+  addToBasket,
+  removeFromBasket,
+  incrementItem,
+} from "../slices/basketSlice";
 const CheckoutProduct = ({ product }) => {
   const dispatch = useDispatch();
   return (
@@ -32,7 +36,8 @@ const CheckoutProduct = ({ product }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-col space-y-2 my-auto justify-self-end">
+      <div className="flex flex-col space-y-2 justify-self-end">
+        <h1 className="flex self-center top-3">x {product.quantaty}</h1>
         <button
           onClick={() => dispatch(addToBasket(product))}
           className="button mt-auto"
