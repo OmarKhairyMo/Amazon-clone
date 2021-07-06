@@ -14,7 +14,7 @@
        border 
         border-yellow-300
          rounded-sm
-       
+          focus:outline-none
            focus:ring-yellow-500
             active:from-yellow-500
              top-0;
